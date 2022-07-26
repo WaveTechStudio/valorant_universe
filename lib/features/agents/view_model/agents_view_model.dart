@@ -1,7 +1,7 @@
 import 'package:mobx/mobx.dart';
-import 'package:valorant_universe/core/service/network/network_manager.dart';
-import 'package:valorant_universe/features/agents/model/agents_response_model.dart';
-import 'package:valorant_universe/features/agents/service/agents_service.dart';
+import '../../../core/service/network/network_manager.dart';
+import '../model/agents_response_model.dart';
+import '../service/agents_service.dart';
 
 import '../../../core/enums/page_states.dart';
 part 'agents_view_model.g.dart';

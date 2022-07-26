@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:valorant_universe/core/enums/page_states.dart';
-import 'package:valorant_universe/features/agents/view_model/agents_view_model.dart';
+import '../../../core/enums/page_states.dart';
+import '../view_model/agents_view_model.dart';
 
 class AgentsView extends StatefulWidget {
   const AgentsView({Key? key}) : super(key: key);

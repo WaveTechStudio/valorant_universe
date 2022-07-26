@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'features/navbar/navbar_view.dart';
 
 void main() => runApp(const ValorantUniverse());
