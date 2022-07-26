@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:valorant_universe/features/weapons/model/weapons_response_model.dart';
+import '../model/weapons_response_model.dart';
 
 import '../../../core/exception/network_error_exception.dart';
 
