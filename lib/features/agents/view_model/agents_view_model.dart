@@ -68,6 +68,6 @@ abstract class AgentsViewModelBase with Store {
         roles.add(element?.role?.displayName ?? "Unknown");
       }
     }
-    print(roles);
+    log(roles.toString());
   }
 }

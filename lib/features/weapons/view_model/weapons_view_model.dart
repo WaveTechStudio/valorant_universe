@@ -1,4 +1,5 @@
 import 'package:mobx/mobx.dart';
+
 import '../../../core/enum/page_states.dart';
 import '../../../core/service/network/network_manager.dart';
 import '../model/weapons_response_model.dart';

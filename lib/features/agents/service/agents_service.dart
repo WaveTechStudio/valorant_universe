@@ -1,8 +1,5 @@
-import 'dart:io';
-
 import 'package:dio/dio.dart';
 
-import '../../../core/exception/network_error_exception.dart';
 import '../model/agents_response_model.dart';
 
 abstract class IAgentService {
@@ -18,13 +15,13 @@ class AgentService extends IAgentService {
 
   @override
   Future<List<AgentsResponseModel?>?> fetchAllAgents() async {
-    var response = await _dio.get("/agents?isPlayableCharacter=true");
-    switch (response.statusCode) {
-      case HttpStatus.ok:
-        List model = response.data["data"];
-        return model.map((e) => AgentsResponseModel.fromJson(e)).toList();
-      default:
-        throw NetworkError(response.statusCode.toString(), response.statusMessage.toString());
+    try {
+      var response = await _dio.get("/agents?isPlayableCharacter=true");
+
+      List model = response.data["data"];
+      return model.map((e) => AgentsResponseModel.fromJson(e)).toList();
+    } catch (e) {
+      return null;
     }
   }
 }
