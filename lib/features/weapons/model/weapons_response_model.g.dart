@@ -9,12 +9,6 @@ part of 'weapons_response_model.dart';
 WeaponsResponseModel _$WeaponsResponseModelFromJson(
         Map<String, dynamic> json) =>
     WeaponsResponseModel(
-      data: (json['data'] as List<dynamic>?)
-          ?.map((e) => Data.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
       uuid: json['uuid'] as String?,
       displayName: json['displayName'] as String?,
       category: json['category'] as String?,

@@ -13,7 +13,7 @@ abstract class WeaponsViewModelBase with Store {
   final IWeaponsService _weaponsService = WeaponsService(NetworkManager.instance.dio);
 
   @observable
-  WeaponsResponseModel model = WeaponsResponseModel();
+  List<WeaponsResponseModel?> model = [];
 
   @observable
   PageStates? pageState;

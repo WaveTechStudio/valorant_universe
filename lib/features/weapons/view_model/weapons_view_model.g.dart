@@ -13,13 +13,13 @@ mixin _$WeaponsViewModel on WeaponsViewModelBase, Store {
       Atom(name: 'WeaponsViewModelBase.model', context: context);
 
   @override
-  WeaponsResponseModel get model {
+  List<WeaponsResponseModel?> get model {
     _$modelAtom.reportRead();
     return super.model;
   }
 
   @override
-  set model(WeaponsResponseModel value) {
+  set model(List<WeaponsResponseModel?> value) {
     _$modelAtom.reportWrite(value, super.model, () {
       super.model = value;
     });

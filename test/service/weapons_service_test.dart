@@ -9,6 +9,6 @@ void main() {
   });
   test('fetchAllWeapons test', () async {
     final response = await weaponService.fetchAllWeapons();
-    expect(response?.data, isNotEmpty);
+    expect(response, isList);
   });
 }

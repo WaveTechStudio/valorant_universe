@@ -30,7 +30,7 @@ class _WeaponsViewState extends State<WeaponsView> {
           return const Center(child: CircularProgressIndicator());
         } else if (_viewModel.pageState == PageStates.loaded) {
           return Center(
-            child: Text(_viewModel.model.data?[0].category ?? ""),
+            child: Text(_viewModel.model[0]?.category ?? ""),
           );
         } else {
           return const Center(child: Text("Something went wrong"));

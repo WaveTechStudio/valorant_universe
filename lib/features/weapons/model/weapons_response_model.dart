@@ -1,20 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:json_annotation/json_annotation.dart';
 
 part 'weapons_response_model.g.dart';
 
 @JsonSerializable(createToJson: false)
 class WeaponsResponseModel {
-  List<Data>? data;
-
-  WeaponsResponseModel({this.data});
-
-  factory WeaponsResponseModel.fromJson(Map<String, dynamic> json) {
-    return _$WeaponsResponseModelFromJson(json);
-  }
-}
-
-@JsonSerializable(createToJson: false)
-class Data {
   String? uuid;
   String? displayName;
   String? category;
@@ -26,20 +16,21 @@ class Data {
   ShopData? shopData;
   List<Skins>? skins;
 
-  Data(
-      {this.uuid,
-      this.displayName,
-      this.category,
-      this.defaultSkinUuid,
-      this.displayIcon,
-      this.killStreamIcon,
-      this.assetPath,
-      this.weaponStats,
-      this.shopData,
-      this.skins});
+  WeaponsResponseModel({
+    this.uuid,
+    this.displayName,
+    this.category,
+    this.defaultSkinUuid,
+    this.displayIcon,
+    this.killStreamIcon,
+    this.assetPath,
+    this.weaponStats,
+    this.shopData,
+    this.skins,
+  });
 
-  factory Data.fromJson(Map<String, dynamic> json) {
-    return _$DataFromJson(json);
+  factory WeaponsResponseModel.fromJson(Map<String, dynamic> json) {
+    return _$WeaponsResponseModelFromJson(json);
   }
 }
 
