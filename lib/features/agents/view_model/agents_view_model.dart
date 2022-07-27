@@ -17,6 +17,7 @@ abstract class AgentsViewModelBase with Store {
 
   @observable
   List<AgentsResponseModel?> model = [];
+  List<AgentsResponseModel?> _initialModel = [];
 
   @observable
   PageStates? pageState;
@@ -24,9 +25,8 @@ abstract class AgentsViewModelBase with Store {
   @observable
   int selectedFilterIndex = 0;
 
-  List<String> roles = ["All", "Controller", "Duelist", "Initiator", "Sentinel"];
-
-  List<AgentsResponseModel?> _initialModel = [];
+  @observable
+  List<String> roles = ["All"];
 
   @action
   Future<void> fetchAllAgents() async {
@@ -59,5 +59,15 @@ abstract class AgentsViewModelBase with Store {
       colorList.add(element.toColor());
     });
     return colorList;
+  }
+
+  @action
+  void getRoles() {
+    for (var element in model) {
+      if (!(roles.contains(element?.role?.displayName ?? false))) {
+        roles.add(element?.role?.displayName ?? "Unknown");
+      }
+    }
+    print(roles);
   }
 }

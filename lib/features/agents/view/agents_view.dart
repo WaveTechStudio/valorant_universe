@@ -19,7 +19,7 @@ class _AgentsViewState extends State<AgentsView> {
   void initState() {
     super.initState();
     _viewModel = AgentsViewModel();
-    _viewModel.fetchAllAgents();
+    _viewModel.fetchAllAgents().then((value) => _viewModel.getRoles());
   }
 
   @override

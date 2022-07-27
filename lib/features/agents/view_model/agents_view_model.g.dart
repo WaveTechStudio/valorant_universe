@@ -57,6 +57,22 @@ mixin _$AgentsViewModel on AgentsViewModelBase, Store {
     });
   }
 
+  late final _$rolesAtom =
+      Atom(name: 'AgentsViewModelBase.roles', context: context);
+
+  @override
+  List<String> get roles {
+    _$rolesAtom.reportRead();
+    return super.roles;
+  }
+
+  @override
+  set roles(List<String> value) {
+    _$rolesAtom.reportWrite(value, super.roles, () {
+      super.roles = value;
+    });
+  }
+
   late final _$fetchAllAgentsAsyncAction =
       AsyncAction('AgentsViewModelBase.fetchAllAgents', context: context);
 
@@ -80,11 +96,23 @@ mixin _$AgentsViewModel on AgentsViewModelBase, Store {
   }
 
   @override
+  void getRoles() {
+    final _$actionInfo = _$AgentsViewModelBaseActionController.startAction(
+        name: 'AgentsViewModelBase.getRoles');
+    try {
+      return super.getRoles();
+    } finally {
+      _$AgentsViewModelBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 model: ${model},
 pageState: ${pageState},
-selectedFilterIndex: ${selectedFilterIndex}
+selectedFilterIndex: ${selectedFilterIndex},
+roles: ${roles}
     ''';
   }
 }
