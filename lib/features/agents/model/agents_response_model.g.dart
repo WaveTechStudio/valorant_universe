@@ -8,12 +8,6 @@ part of 'agents_response_model.dart';
 
 AgentsResponseModel _$AgentsResponseModelFromJson(Map<String, dynamic> json) =>
     AgentsResponseModel(
-      data: (json['data'] as List<dynamic>?)
-          ?.map((e) => Data.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
       uuid: json['uuid'] as String?,
       displayName: json['displayName'] as String?,
       description: json['description'] as String?,
@@ -23,7 +17,6 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       fullPortrait: json['fullPortrait'] as String?,
       fullPortraitV2: json['fullPortraitV2'] as String?,
       killfeedPortrait: json['killfeedPortrait'] as String?,
-      background: json['background'] as String?,
       backgroundGradientColors:
           (json['backgroundGradientColors'] as List<dynamic>?)
               ?.map((e) => e as String)

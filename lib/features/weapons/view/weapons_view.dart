@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../../../core/enums/page_states.dart';
+import '../../../core/enum/page_states.dart';
 import '../view_model/weapons_view_model.dart';
 
 class WeaponsView extends StatefulWidget {

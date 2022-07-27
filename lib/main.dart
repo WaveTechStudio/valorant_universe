@@ -9,6 +9,6 @@ class ValorantUniverse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(title: 'Valorant Universe', home: NavbarView());
+    return MaterialApp(theme: ThemeData.dark(), title: 'Valorant Universe', home: const NavbarView());
   }
 }

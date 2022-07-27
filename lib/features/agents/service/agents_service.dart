@@ -10,18 +10,19 @@ abstract class IAgentService {
 
   IAgentService(this._dio);
 
-  Future<AgentsResponseModel?> fetchAllAgents();
+  Future<List<AgentsResponseModel?>?> fetchAllAgents();
 }
 
 class AgentService extends IAgentService {
   AgentService(super.dio);
 
   @override
-  Future<AgentsResponseModel?> fetchAllAgents() async {
-    var response = await _dio.get("/agents");
+  Future<List<AgentsResponseModel?>?> fetchAllAgents() async {
+    var response = await _dio.get("/agents?isPlayableCharacter=true");
     switch (response.statusCode) {
       case HttpStatus.ok:
-        return AgentsResponseModel.fromJson(response.data);
+        List model = response.data["data"];
+        return model.map((e) => AgentsResponseModel.fromJson(e)).toList();
       default:
         throw NetworkError(response.statusCode.toString(), response.statusMessage.toString());
     }

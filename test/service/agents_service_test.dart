@@ -9,6 +9,6 @@ void main() {
   });
   test('fetchAllAgents test', () async {
     final response = await agentService.fetchAllAgents();
-    expect(response?.data, isNotEmpty);
+    expect(response, isList);
   });
 }
