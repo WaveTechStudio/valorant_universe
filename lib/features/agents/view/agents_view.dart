@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+
 import '../../../core/constant/view_constants.dart';
-import '../../../core/extension/context_extension.dart';
 import '../../../core/enum/page_states.dart';
+import '../../../core/extension/context_extension.dart';
 import '../view_model/agents_view_model.dart';
 
 class AgentsView extends StatefulWidget {
