@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:valorant_universe/core/router/route_manager.dart';
+import 'package:valorant_universe/features/weapon_detail/weapon_detail_view.dart';
 import '../../../core/extension/context_extension.dart';
 
 import '../../../core/constant/view_constants.dart';
@@ -67,7 +69,9 @@ class _WeaponsViewState extends State<WeaponsView> {
           return ClipRRect(
               borderRadius: ViewConstants.borderCircular,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  RouteManager().push(context, WeaponDetailView(weapon: _viewModel.model[index]));
+                },
                 child: _weaponsStackedCard(index, context),
               ));
         });

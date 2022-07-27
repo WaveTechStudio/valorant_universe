@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:valorant_universe/core/router/route_manager.dart';
+import 'package:valorant_universe/features/agent_detail/view/agent_detail_view.dart';
 
 import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
@@ -101,8 +103,10 @@ class _AgentsViewState extends State<AgentsView> {
             childAspectRatio: 3 / 4,
             crossAxisCount: 2),
         itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {},
+          return GestureDetector(
+            onTap: () {
+              RouteManager().push(context, AgentsDetailView(agent: _viewModel.model[index]));
+            },
             child: ClipRRect(
               borderRadius: ViewConstants.borderCircular,
               child: Stack(
