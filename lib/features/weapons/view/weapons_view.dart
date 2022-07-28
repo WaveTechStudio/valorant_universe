@@ -1,12 +1,12 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:valorant_universe/core/router/route_manager.dart';
-import 'package:valorant_universe/features/weapon_detail/weapon_detail_view.dart';
+import '../../../core/router/route_manager.dart';
+import '../../weapon_detail/weapon_detail_view.dart';
 import '../../../core/extension/context_extension.dart';
 
 import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
+import '../../../product/widgets/cached_network_image.dart';
 import '../view_model/weapons_view_model.dart';
 
 class WeaponsView extends StatefulWidget {
@@ -87,10 +87,7 @@ class _WeaponsViewState extends State<WeaponsView> {
           children: [
             Expanded(
               flex: 3,
-              child: CachedNetworkImage(
-                imageUrl: _viewModel.model[index]?.displayIcon ?? "",
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
+              child: CustomCachedNetworkImage(imageUrl: _viewModel.model[index]?.displayIcon),
             ),
             Expanded(
               child: Center(

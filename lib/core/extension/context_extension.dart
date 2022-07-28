@@ -28,6 +28,10 @@ extension PaddingExtension on BuildContext {
   EdgeInsets get paddingRightLow => EdgeInsets.only(right: lowValue);
   EdgeInsets get paddingRightDefault => EdgeInsets.only(right: mediumValue);
   EdgeInsets get paddingRightHigh => EdgeInsets.only(right: highValue);
+
+  EdgeInsets get paddingLeftLow => EdgeInsets.only(left: lowValue);
+  EdgeInsets get paddingLeftDefault => EdgeInsets.only(left: mediumValue);
+  EdgeInsets get paddingLeftHigh => EdgeInsets.only(left: highValue);
 }
 
 extension DurationExtension on BuildContext {

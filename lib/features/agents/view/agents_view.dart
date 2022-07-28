@@ -1,12 +1,12 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:valorant_universe/core/router/route_manager.dart';
-import 'package:valorant_universe/features/agent_detail/view/agent_detail_view.dart';
+import '../../../core/router/route_manager.dart';
 
 import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/context_extension.dart';
+import '../../../product/widgets/cached_network_image.dart';
+import '../../agent_detail/view/agent_detail_view.dart';
 import '../view_model/agents_view_model.dart';
 
 class AgentsView extends StatefulWidget {
@@ -105,7 +105,7 @@ class _AgentsViewState extends State<AgentsView> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              RouteManager().push(context, AgentsDetailView(agent: _viewModel.model[index]));
+              RouteManager().push(context, AgentDetailView(agent: _viewModel.model[index]));
             },
             child: ClipRRect(
               borderRadius: ViewConstants.borderCircular,
@@ -137,10 +137,7 @@ class _AgentsViewState extends State<AgentsView> {
       children: [
         Expanded(
           flex: 4,
-          child: CachedNetworkImage(
-            imageUrl: _viewModel.model[index]?.fullPortraitV2 ?? "",
-            errorWidget: (context, url, error) => const Icon(Icons.error),
-          ),
+          child: CustomCachedNetworkImage(imageUrl: _viewModel.model[index]?.fullPortraitV2),
         ),
         Expanded(
           child: Center(

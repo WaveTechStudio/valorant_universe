@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.valorant_universe">
+    <uses-permission android:name="android.permission.INTERNET"/> 
    <application
         android:label="valorant_universe"
         android:name="${applicationName}"
