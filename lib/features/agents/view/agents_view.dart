@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import '../../../core/router/route_manager.dart';
 
 import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/context_extension.dart';
+import '../../../core/router/route_manager.dart';
 import '../../../product/widgets/cached_network_image.dart';
 import '../../agent_detail/view/agent_detail_view.dart';
 import '../view_model/agents_view_model.dart';

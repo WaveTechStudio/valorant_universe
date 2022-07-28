@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+
 import '../../../core/constant/view_constants.dart';
 import '../../../core/extension/context_extension.dart';
 import '../../../core/extension/string_extension.dart';
-import '../../agents/model/agents_response_model.dart';
-
 import '../../../product/widgets/cached_network_image.dart';
+import '../../agents/model/agents_response_model.dart';
 
 class AgentDetailView extends StatelessWidget {
   const AgentDetailView({
@@ -39,7 +39,7 @@ class AgentDetailView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    " // Lore",
+                    "// Lore",
                     style: Theme.of(context).textTheme.headline6?.copyWith(fontFamily: "Valorant"),
                   ),
                   SizedBox(
@@ -56,7 +56,7 @@ class AgentDetailView extends StatelessWidget {
                     height: context.mediumValue,
                   ),
                   Text(
-                    " // Abilities",
+                    "// Abilities",
                     style: Theme.of(context).textTheme.headline6?.copyWith(fontFamily: "Valorant"),
                   ),
                   SizedBox(
