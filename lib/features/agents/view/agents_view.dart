@@ -35,7 +35,7 @@ class _AgentsViewState extends State<AgentsView> {
           return const Center(child: CircularProgressIndicator());
         } else if (_viewModel.pageState == PageStates.loaded) {
           return Padding(
-            padding: context.paddingAllDefault,
+            padding: context.paddingHorizontalDefault,
             child: Column(
               children: [
                 Expanded(

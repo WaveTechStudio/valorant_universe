@@ -58,7 +58,7 @@ class _WeaponsViewState extends State<WeaponsView> {
 
   GridView _weaponsGridView(BuildContext context) {
     return GridView.builder(
-        padding: context.paddingAllDefault,
+        padding: context.paddingHorizontalDefault,
         itemCount: _viewModel.model.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisSpacing: context.mediumValue,
@@ -81,13 +81,17 @@ class _WeaponsViewState extends State<WeaponsView> {
     return Stack(
       children: [
         Container(
-          color: Colors.grey,
+          color: Colors.blueGrey,
         ),
         Column(
           children: [
+            const Spacer(),
             Expanded(
               flex: 3,
-              child: CustomCachedNetworkImage(imageUrl: _viewModel.model[index]?.displayIcon),
+              child: Padding(
+                padding: context.paddingHorizontalLow,
+                child: CustomCachedNetworkImage(imageUrl: _viewModel.model[index]?.displayIcon),
+              ),
             ),
             Expanded(
               child: Center(
