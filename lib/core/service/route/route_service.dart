@@ -10,9 +10,9 @@ import '../../../features/agent_detail/view/agent_detail_view.dart';
 import '../../../features/weapon_detail/weapon_detail_view.dart';
 
 class RouteService {
-  RouteService(this.context);
-
-  final BuildContext context;
+  static final RouteService _instace = RouteService._init();
+  static RouteService get instance => _instace;
+  RouteService._init();
 
   final globalRoutes = GoRouter(
     initialLocation: RouteConstants.navbar,
@@ -46,15 +46,15 @@ class RouteService {
     ],
   );
 
-  void push({required String route, Object? extra}) {
+  void push({required BuildContext context, required String route, Object? extra}) {
     GoRouter.of(context).push(route, extra: extra);
   }
 
-  void go({required String route, Object? extra}) {
+  void go({required BuildContext context, required String route, Object? extra}) {
     GoRouter.of(context).go(route, extra: extra);
   }
 
-  void pop() {
+  void pop({required BuildContext context}) {
     GoRouter.of(context).pop();
   }
 }

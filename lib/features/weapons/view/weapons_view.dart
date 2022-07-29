@@ -71,8 +71,8 @@ class _WeaponsViewState extends State<WeaponsView> {
           return ClipRRect(
               borderRadius: ViewConstants.borderCircular,
               child: GestureDetector(
-                onTap: () =>
-                    RouteService(context).push(route: RouteConstants.weaponDetail, extra: _viewModel.model[index]),
+                onTap: () => RouteService.instance
+                    .push(context: context, route: RouteConstants.weaponDetail, extra: _viewModel.model[index]),
                 child: _weaponsStackedCard(index, context),
               ));
         });

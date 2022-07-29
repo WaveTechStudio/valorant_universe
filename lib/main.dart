@@ -6,7 +6,7 @@ import 'core/constant/locale_constants.dart';
 import 'core/constant/path_constants.dart';
 import 'core/init/localization_init.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await localizationInit();
@@ -25,8 +25,6 @@ class ValorantUniverse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final routeService = RouteService(context);
-
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
@@ -45,9 +43,9 @@ class ValorantUniverse extends StatelessWidget {
       locale: context.locale,
 
       // routing
-      routeInformationParser: routeService.globalRoutes.routeInformationParser,
-      routerDelegate: routeService.globalRoutes.routerDelegate,
-      routeInformationProvider: routeService.globalRoutes.routeInformationProvider,
+      routeInformationParser: RouteService.instance.globalRoutes.routeInformationParser,
+      routerDelegate: RouteService.instance.globalRoutes.routerDelegate,
+      routeInformationProvider: RouteService.instance.globalRoutes.routeInformationProvider,
     );
   }
 }

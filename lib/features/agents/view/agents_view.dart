@@ -106,7 +106,8 @@ class _AgentsViewState extends State<AgentsView> {
             crossAxisCount: 2),
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () => RouteService(context).push(route: RouteConstants.agentDetail, extra: _viewModel.model[index]),
+            onTap: () => RouteService.instance
+                .push(context: context, route: RouteConstants.agentDetail, extra: _viewModel.model[index]),
             child: ClipRRect(
               borderRadius: ViewConstants.borderCircular,
               child: Stack(
