@@ -1,12 +1,14 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import '../../../core/router/route_manager.dart';
-import '../../weapon_detail/weapon_detail_view.dart';
-import '../../../core/extension/context_extension.dart';
 
 import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
+import '../../../core/extension/context_extension.dart';
+import '../../../core/router/route_manager.dart';
+import '../../../product/lang/locale_keys.g.dart';
 import '../../../product/widgets/cached_network_image.dart';
+import '../../weapon_detail/weapon_detail_view.dart';
 import '../view_model/weapons_view_model.dart';
 
 class WeaponsView extends StatefulWidget {
@@ -42,7 +44,7 @@ class _WeaponsViewState extends State<WeaponsView> {
             ],
           );
         } else {
-          return const Center(child: Text("Something went wrong"));
+          return Center(child: Text(LocaleKeys.error.tr()));
         }
       }),
     );
@@ -50,9 +52,9 @@ class _WeaponsViewState extends State<WeaponsView> {
 
   AppBar _appbar() {
     return AppBar(
-        title: const Text(
-      "Weapons",
-      style: TextStyle(fontFamily: "Valorant"),
+        title: Text(
+      LocaleKeys.common_weapons.tr(),
+      style: const TextStyle(fontFamily: "Valorant"),
     ));
   }
 

@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../core/constant/view_constants.dart';
 import '../../core/extension/context_extension.dart';
+import '../../product/lang/locale_keys.g.dart';
 import '../../product/widgets/cached_network_image.dart';
 import '../weapons/model/weapons_response_model.dart';
 
@@ -48,29 +50,13 @@ class WeaponDetailView extends StatelessWidget {
         color: Colors.blueGrey,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Spacer(),
           Expanded(
             flex: 2,
             child: Center(child: CustomCachedNetworkImage(imageUrl: weapon?.displayIcon)),
           ),
-          Expanded(
-            child: Padding(
-              padding: context.paddingHorizontalDefault,
-              child: Text(weapon?.displayName ?? "",
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant")),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: context.paddingHorizontalDefault,
-              child: Text(
-                weapon?.shopData?.categoryText ?? "",
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant"),
-              ),
-            ),
-          ),
+          const Spacer(),
         ],
       ),
     );
@@ -81,7 +67,7 @@ class WeaponDetailView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "// Weapon Stats",
+          "// ${LocaleKeys.weapon_details_weapon_stats.tr()}",
           style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant"),
         ),
         SizedBox(
@@ -91,7 +77,7 @@ class WeaponDetailView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Magazine Size",
+              LocaleKeys.weapon_details_magazine_size.tr(),
               style: Theme.of(context).textTheme.titleMedium,
             ),
             Text(
@@ -105,11 +91,11 @@ class WeaponDetailView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Reload Time",
+              LocaleKeys.weapon_details_reload_time.tr(),
               style: Theme.of(context).textTheme.titleMedium,
             ),
             Text(
-              "${weapon?.weaponStats?.reloadTimeSeconds?.toStringAsFixed(2) ?? "0"} /sec",
+              "${weapon?.weaponStats?.reloadTimeSeconds?.toStringAsFixed(2) ?? "0"} /${LocaleKeys.weapon_details_seconds.tr()}",
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ],
@@ -119,7 +105,7 @@ class WeaponDetailView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Fire Rate",
+              LocaleKeys.weapon_details_fire_rate.tr(),
               style: Theme.of(context).textTheme.titleMedium,
             ),
             Text(
@@ -135,7 +121,7 @@ class WeaponDetailView extends StatelessWidget {
         (weapon?.weaponStats?.damageRanges?.length ?? 0) == 0
             ? const SizedBox.shrink()
             : Text(
-                "// Damage Ranges",
+                "// ${LocaleKeys.weapon_details_damage_ranges.tr()}",
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant"),
               ),
         SizedBox(
@@ -156,7 +142,7 @@ class WeaponDetailView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "${weapon?.weaponStats?.damageRanges?[index].rangeStartMeters?.toStringAsFixed(0) ?? ""} - ${weapon?.weaponStats?.damageRanges?[index].rangeEndMeters?.toStringAsFixed(0) ?? ""} m",
+                "${weapon?.weaponStats?.damageRanges?[index].rangeStartMeters?.toStringAsFixed(0) ?? ""} - ${weapon?.weaponStats?.damageRanges?[index].rangeEndMeters?.toStringAsFixed(0) ?? ""} ${LocaleKeys.weapon_details_meter.tr()}",
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const Divider(),
@@ -164,7 +150,7 @@ class WeaponDetailView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Head Damage",
+                    LocaleKeys.weapon_details_head_damage.tr(),
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   Text(
@@ -178,7 +164,7 @@ class WeaponDetailView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Body Damage",
+                    LocaleKeys.weapon_details_body_damage.tr(),
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   Text(
@@ -191,7 +177,7 @@ class WeaponDetailView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Leg Damage"),
+                  Text(LocaleKeys.weapon_details_leg_damage.tr()),
                   Text(
                     weapon?.weaponStats?.damageRanges?[index].bodyDamage?.toStringAsFixed(1) ?? "0",
                     style: Theme.of(context).textTheme.titleMedium,

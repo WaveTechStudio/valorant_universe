@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constant/view_constants.dart';
 import '../../../core/extension/context_extension.dart';
 import '../../../core/extension/string_extension.dart';
+import '../../../product/lang/locale_keys.g.dart';
 import '../../../product/widgets/cached_network_image.dart';
 import '../../agents/model/agents_response_model.dart';
 
@@ -39,7 +41,7 @@ class AgentDetailView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "// Lore",
+                    "// ${LocaleKeys.agent_details_lore.tr()}",
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant"),
                   ),
                   SizedBox(
@@ -53,7 +55,7 @@ class AgentDetailView extends StatelessWidget {
                     height: context.mediumValue,
                   ),
                   Text(
-                    "// Abilities",
+                    "// ${LocaleKeys.agent_details_abilities.tr()}",
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant"),
                   ),
                   SizedBox(

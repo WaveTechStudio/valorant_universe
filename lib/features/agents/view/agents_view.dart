@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
@@ -5,6 +6,7 @@ import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/context_extension.dart';
 import '../../../core/router/route_manager.dart';
+import '../../../product/lang/locale_keys.g.dart';
 import '../../../product/widgets/cached_network_image.dart';
 import '../../agent_detail/view/agent_detail_view.dart';
 import '../view_model/agents_view_model.dart';
@@ -49,7 +51,7 @@ class _AgentsViewState extends State<AgentsView> {
             ),
           );
         } else {
-          return const Center(child: Text("Something went wrong"));
+          return Center(child: Text(LocaleKeys.error.tr()));
         }
       }),
     );
@@ -57,9 +59,9 @@ class _AgentsViewState extends State<AgentsView> {
 
   AppBar _appbar() {
     return AppBar(
-      title: const Text(
-        "Agents",
-        style: TextStyle(fontFamily: "Valorant"),
+      title: Text(
+        LocaleKeys.common_agents.tr(),
+        style: const TextStyle(fontFamily: "Valorant"),
       ),
     );
   }

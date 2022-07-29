@@ -1,11 +1,13 @@
 import 'dart:developer';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/string_extension.dart';
 import '../../../core/service/network/network_manager.dart';
+import '../../../product/lang/locale_keys.g.dart';
 import '../model/agents_response_model.dart';
 import '../service/agents_service.dart';
 
@@ -27,7 +29,7 @@ abstract class AgentsViewModelBase with Store {
   int selectedFilterIndex = 0;
 
   @observable
-  List<String> roles = ["All"];
+  List<String> roles = [LocaleKeys.all_roles.tr()];
 
   @action
   Future<void> fetchAllAgents() async {
