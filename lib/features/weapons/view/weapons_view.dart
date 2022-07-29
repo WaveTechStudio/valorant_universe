@@ -1,14 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:valorant_universe/core/constant/route_constants.dart';
+import 'package:valorant_universe/core/service/route/route_service.dart';
 
 import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/context_extension.dart';
-import '../../../core/router/route_manager.dart';
 import '../../../product/lang/locale_keys.g.dart';
 import '../../../product/widgets/cached_network_image.dart';
-import '../../weapon_detail/weapon_detail_view.dart';
 import '../view_model/weapons_view_model.dart';
 
 class WeaponsView extends StatefulWidget {
@@ -71,9 +71,8 @@ class _WeaponsViewState extends State<WeaponsView> {
           return ClipRRect(
               borderRadius: ViewConstants.borderCircular,
               child: GestureDetector(
-                onTap: () {
-                  RouteManager().push(context, WeaponDetailView(weapon: _viewModel.model[index]));
-                },
+                onTap: () =>
+                    RouteService(context).push(route: RouteConstants.weaponDetail, extra: _viewModel.model[index]),
                 child: _weaponsStackedCard(index, context),
               ));
         });

@@ -1,14 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:valorant_universe/core/constant/route_constants.dart';
+import 'package:valorant_universe/core/service/route/route_service.dart';
 
 import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/context_extension.dart';
-import '../../../core/router/route_manager.dart';
 import '../../../product/lang/locale_keys.g.dart';
 import '../../../product/widgets/cached_network_image.dart';
-import '../../agent_detail/view/agent_detail_view.dart';
 import '../view_model/agents_view_model.dart';
 
 class AgentsView extends StatefulWidget {
@@ -106,9 +106,7 @@ class _AgentsViewState extends State<AgentsView> {
             crossAxisCount: 2),
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {
-              RouteManager().push(context, AgentDetailView(agent: _viewModel.model[index]));
-            },
+            onTap: () => RouteService(context).push(route: RouteConstants.agentDetail, extra: _viewModel.model[index]),
             child: ClipRRect(
               borderRadius: ViewConstants.borderCircular,
               child: Stack(
