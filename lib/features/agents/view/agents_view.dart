@@ -83,7 +83,7 @@ class _AgentsViewState extends State<AgentsView> {
               child: Center(
                 child: Text(
                   _viewModel.roles[index],
-                  style: Theme.of(context).textTheme.bodyText1?.copyWith(fontFamily: "Valorant"),
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: "Valorant"),
                 ),
               ),
             ),
@@ -143,7 +143,7 @@ class _AgentsViewState extends State<AgentsView> {
           child: Center(
             child: Text(
               _viewModel.model[index]?.displayName ?? "",
-              style: Theme.of(context).textTheme.headline6?.copyWith(fontFamily: "Valorant"),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant"),
             ),
           ),
         ),

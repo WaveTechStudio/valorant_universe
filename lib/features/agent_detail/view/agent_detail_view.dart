@@ -40,24 +40,21 @@ class AgentDetailView extends StatelessWidget {
                 children: [
                   Text(
                     "// Lore",
-                    style: Theme.of(context).textTheme.headline6?.copyWith(fontFamily: "Valorant"),
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant"),
                   ),
                   SizedBox(
                     height: context.mediumValue,
                   ),
                   Text(
                     agent?.description ?? "",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText2
-                        ?.copyWith(fontWeight: FontWeight.w500, color: Colors.grey),
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.white70),
                   ),
                   SizedBox(
                     height: context.mediumValue,
                   ),
                   Text(
                     "// Abilities",
-                    style: Theme.of(context).textTheme.headline6?.copyWith(fontFamily: "Valorant"),
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant"),
                   ),
                   SizedBox(
                     height: context.mediumValue,
@@ -108,11 +105,11 @@ class AgentDetailView extends StatelessWidget {
           children: [
             Text(
               agent?.displayName ?? "",
-              style: Theme.of(context).textTheme.headline4?.copyWith(fontFamily: "Valorant"),
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontFamily: "Valorant"),
             ),
             Text(
               agent?.role?.displayName ?? "",
-              style: Theme.of(context).textTheme.headline6?.copyWith(fontFamily: "Valorant"),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant"),
             ),
           ],
         ),
@@ -134,8 +131,11 @@ class AgentDetailView extends StatelessWidget {
               leading: CustomCachedNetworkImage(
                 imageUrl: agent?.abilities?[index].displayIcon,
               ),
-              title: Text(agent?.abilities?[index].displayName ?? ""),
-              subtitle: Text(agent?.abilities?[index].description ?? ""),
+              title: Text(agent?.abilities?[index].displayName ?? "", style: Theme.of(context).textTheme.titleMedium),
+              subtitle: Text(
+                agent?.abilities?[index].description ?? "",
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
             ),
           );
         }));

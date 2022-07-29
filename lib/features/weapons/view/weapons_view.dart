@@ -87,7 +87,7 @@ class _WeaponsViewState extends State<WeaponsView> {
           children: [
             const Spacer(),
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Padding(
                 padding: context.paddingHorizontalLow,
                 child: CustomCachedNetworkImage(imageUrl: _viewModel.model[index]?.displayIcon),
@@ -97,16 +97,11 @@ class _WeaponsViewState extends State<WeaponsView> {
               child: Center(
                 child: Text(
                   _viewModel.model[index]?.displayName ?? "",
-                  style: Theme.of(context).textTheme.headline6?.copyWith(fontFamily: "Valorant"),
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: "Valorant"),
                 ),
               ),
             ),
-            Expanded(
-              child: Center(
-                child: Text(_viewModel.model[index]?.shopData?.category ?? "",
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontFamily: "Valorant")),
-              ),
-            ),
+            const Spacer()
           ],
         ),
       ],
