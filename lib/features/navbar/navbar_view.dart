@@ -1,8 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-import '../../core/constant/path_constants.dart';
+import '../../product/icons/custom_icons.dart';
 import '../../product/lang/locale_keys.g.dart';
 import '../agents/view/agents_view.dart';
 import '../weapons/view/weapons_view.dart';
@@ -21,18 +20,16 @@ class _NavbarViewState extends State<NavbarView> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.red,
         items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              PathConstants.agentSvg,
-            ),
+            icon: const Icon(CustomIcons.agent),
             label: LocaleKeys.common_agents.tr(),
           ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                PathConstants.weaponSvg,
-              ),
-              label: LocaleKeys.common_weapons.tr()),
+            icon: const Icon(CustomIcons.weapon),
+            label: LocaleKeys.common_weapons.tr(),
+          ),
         ],
         currentIndex: _currentIndex,
         onTap: (index) => setState(() {
