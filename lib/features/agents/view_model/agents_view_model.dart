@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
@@ -52,7 +50,6 @@ abstract class AgentsViewModelBase with Store {
     } else {
       model = _initialModel.where((element) => element?.role?.displayName == roles[index].toString()).toList();
     }
-    log(model.length.toString());
     selectedFilterIndex = index;
   }
 
@@ -71,6 +68,5 @@ abstract class AgentsViewModelBase with Store {
         roles.add(element?.role?.displayName ?? "Unknown");
       }
     }
-    log(roles.toString());
   }
 }

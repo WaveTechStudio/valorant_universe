@@ -1,10 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'core/constant/string_constants.dart';
-import 'core/service/route/route_service.dart';
+
 import 'core/constant/locale_constants.dart';
 import 'core/constant/path_constants.dart';
+import 'core/constant/string_constants.dart';
 import 'core/init/localization_init.dart';
+import 'core/service/route/route_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

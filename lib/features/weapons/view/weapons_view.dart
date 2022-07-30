@@ -1,12 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import '../../../core/constant/route_constants.dart';
-import '../../../core/service/route/route_service.dart';
 
+import '../../../core/constant/route_constants.dart';
 import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/context_extension.dart';
+import '../../../core/service/route/route_service.dart';
 import '../../../product/lang/locale_keys.g.dart';
 import '../../../product/widgets/cached_network_image.dart';
 import '../view_model/weapons_view_model.dart';

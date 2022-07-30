@@ -23,15 +23,14 @@ class _NavbarViewState extends State<NavbarView> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                PathConstants.agentSvg,
-                color: Colors.black,
-              ),
-              label: LocaleKeys.common_agents.tr()),
+            icon: SvgPicture.asset(
+              PathConstants.agentSvg,
+            ),
+            label: LocaleKeys.common_agents.tr(),
+          ),
           BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 PathConstants.weaponSvg,
-                color: Colors.black,
               ),
               label: LocaleKeys.common_weapons.tr()),
         ],
