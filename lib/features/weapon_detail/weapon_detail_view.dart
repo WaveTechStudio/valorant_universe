@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/constant/view_constants.dart';
 import '../../core/extension/context_extension.dart';
-import '../../product/lang/locale_keys.g.dart';
+import '../../product/lang/codegen_loader.g.dart';
 import '../../product/widgets/cached_network_image.dart';
 import '../weapons/model/weapons_response_model.dart';
 

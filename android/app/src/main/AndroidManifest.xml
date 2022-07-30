@@ -2,7 +2,7 @@
     package="com.example.valorant_universe">
     <uses-permission android:name="android.permission.INTERNET"/> 
    <application
-        android:label="valorant_universe"
+        android:label="Valorant Universe"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

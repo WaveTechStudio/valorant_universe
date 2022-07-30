@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../product/icons/custom_icons.dart';
-import '../../product/lang/locale_keys.g.dart';
+import '../../product/lang/codegen_loader.g.dart';
 import '../agents/view/agents_view.dart';
 import '../weapons/view/weapons_view.dart';
 
