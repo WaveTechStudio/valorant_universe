@@ -50,8 +50,11 @@ class _AgentsViewState extends State<AgentsView> {
                 Expanded(
                   child: _agentRolesCard(),
                 ),
+                SizedBox(
+                  height: context.mediumValue,
+                ),
                 Expanded(
-                  flex: 9,
+                  flex: 14,
                   child: _agentsGridView(context),
                 )
               ],
@@ -105,7 +108,6 @@ class _AgentsViewState extends State<AgentsView> {
   GridView _agentsGridView(BuildContext context) {
     return GridView.builder(
         itemCount: _viewModel.model.length,
-        padding: context.paddingVerticalDefault,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisSpacing: context.mediumValue,
             crossAxisSpacing: context.mediumValue,
