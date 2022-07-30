@@ -45,8 +45,9 @@ mixin _$WeaponsViewModel on WeaponsViewModelBase, Store {
       AsyncAction('WeaponsViewModelBase.fetchAllWeapons', context: context);
 
   @override
-  Future<void> fetchAllWeapons() {
-    return _$fetchAllWeaponsAsyncAction.run(() => super.fetchAllWeapons());
+  Future<void> fetchAllWeapons(String locale) {
+    return _$fetchAllWeaponsAsyncAction
+        .run(() => super.fetchAllWeapons(locale));
   }
 
   @override

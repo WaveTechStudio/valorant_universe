@@ -7,16 +7,16 @@ abstract class IWeaponsService {
 
   IWeaponsService(this._dio);
 
-  Future<List<WeaponsResponseModel?>?> fetchAllWeapons();
+  Future<List<WeaponsResponseModel?>?> fetchAllWeapons(String locale);
 }
 
 class WeaponsService extends IWeaponsService {
   WeaponsService(super.dio);
 
   @override
-  Future<List<WeaponsResponseModel?>?> fetchAllWeapons() async {
+  Future<List<WeaponsResponseModel?>?> fetchAllWeapons(String locale) async {
     try {
-      var response = await _dio.get("/weapons");
+      var response = await _dio.get("/weapons?language=$locale");
 
       List model = response.data["data"];
       return model.map((e) => WeaponsResponseModel.fromJson(e)).toList();

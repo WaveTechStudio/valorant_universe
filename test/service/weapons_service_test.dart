@@ -8,7 +8,7 @@ void main() {
     weaponService = WeaponsService(NetworkManager.instance.dio);
   });
   test('fetchAllWeapons test', () async {
-    final response = await weaponService.fetchAllWeapons();
+    final response = await weaponService.fetchAllWeapons("en-US");
     expect(response, isList);
   });
 }

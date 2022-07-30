@@ -19,9 +19,9 @@ abstract class WeaponsViewModelBase with Store {
   PageStates? pageState;
 
   @action
-  Future<void> fetchAllWeapons() async {
+  Future<void> fetchAllWeapons(String locale) async {
     pageState = PageStates.loading;
-    final response = await _weaponsService.fetchAllWeapons();
+    final response = await _weaponsService.fetchAllWeapons(locale);
 
     if (response != null) {
       model = response;

@@ -8,7 +8,7 @@ void main() {
     agentService = AgentService(NetworkManager.instance.dio);
   });
   test('fetchAllAgents test', () async {
-    final response = await agentService.fetchAllAgents();
+    final response = await agentService.fetchAllAgents("en-US");
     expect(response, isList);
   });
 }

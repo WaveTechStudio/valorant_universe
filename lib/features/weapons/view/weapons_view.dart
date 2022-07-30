@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:valorant_universe/core/constant/route_constants.dart';
-import 'package:valorant_universe/core/service/route/route_service.dart';
+import '../../../core/constant/route_constants.dart';
+import '../../../core/service/route/route_service.dart';
 
 import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
@@ -25,7 +25,12 @@ class _WeaponsViewState extends State<WeaponsView> {
   void initState() {
     super.initState();
     _viewModel = WeaponsViewModel();
-    _viewModel.fetchAllWeapons();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _viewModel.fetchAllWeapons(context.locale.toStringWithSeparator(separator: "-"));
   }
 
   @override

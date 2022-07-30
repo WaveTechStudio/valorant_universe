@@ -17,7 +17,7 @@
         "head_damage": "Head Damage",
         "body_damage": "Body Damage",
         "leg_damage": "Leg Damage",
-        "meter": "m",
+        "meter": "meters",
         "seconds": "sec"
     },
     "error": "Something went wrong"

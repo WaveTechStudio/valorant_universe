@@ -1,0 +1,24 @@
+{
+    "common": {
+        "agents": "Ajanlar",
+        "weapons": "Silahlar"
+    },
+    "all_roles": "Hepsi",
+    "agent_details": {
+        "lore": "Hikaye",
+        "abilities": "Yetenekler"
+    },
+    "weapon_details": {
+        "weapon_stats": "Silah Detayları",
+        "magazine_size": "Şarjör Boyutu",
+        "reload_time": "Doldurma Süresi",
+        "fire_rate": "Atış Hızı",
+        "damage_ranges": "Hasar Aralıkları",
+        "head_damage": "Kafa Hasarı",
+        "body_damage": "Vücut Hasarı",
+        "leg_damage": "Bacak Hasarı",
+        "meter": "m",
+        "seconds": "s"
+    },
+    "error": "Bir şeyler ters gitti"
+}

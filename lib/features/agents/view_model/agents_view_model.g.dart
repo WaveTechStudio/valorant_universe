@@ -77,8 +77,8 @@ mixin _$AgentsViewModel on AgentsViewModelBase, Store {
       AsyncAction('AgentsViewModelBase.fetchAllAgents', context: context);
 
   @override
-  Future<void> fetchAllAgents() {
-    return _$fetchAllAgentsAsyncAction.run(() => super.fetchAllAgents());
+  Future<void> fetchAllAgents(String locale) {
+    return _$fetchAllAgentsAsyncAction.run(() => super.fetchAllAgents(locale));
   }
 
   late final _$AgentsViewModelBaseActionController =

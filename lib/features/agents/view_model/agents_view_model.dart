@@ -32,9 +32,9 @@ abstract class AgentsViewModelBase with Store {
   List<String> roles = [LocaleKeys.all_roles.tr()];
 
   @action
-  Future<void> fetchAllAgents() async {
+  Future<void> fetchAllAgents(String locale) async {
     pageState = PageStates.loading;
-    final response = await _agentService.fetchAllAgents();
+    final response = await _agentService.fetchAllAgents(locale);
 
     if (response != null) {
       model = response;

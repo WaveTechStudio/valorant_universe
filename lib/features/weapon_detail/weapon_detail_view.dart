@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import '../../core/constant/view_constants.dart';
 import '../../core/extension/context_extension.dart';
 import '../../product/lang/locale_keys.g.dart';
@@ -95,7 +96,7 @@ class WeaponDetailView extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
             ),
             Text(
-              "${weapon?.weaponStats?.reloadTimeSeconds?.toStringAsFixed(2) ?? "0"} /${LocaleKeys.weapon_details_seconds.tr()}",
+              "${weapon?.weaponStats?.reloadTimeSeconds?.toStringAsFixed(2) ?? "0"} ${LocaleKeys.weapon_details_seconds.tr()}",
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ],
@@ -109,7 +110,7 @@ class WeaponDetailView extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
             ),
             Text(
-              "${weapon?.weaponStats?.fireRate?.toStringAsFixed(2) ?? "0"} /sec",
+              "${weapon?.weaponStats?.fireRate?.toStringAsFixed(2) ?? "0"} / ${LocaleKeys.weapon_details_seconds.tr()}",
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ],
