@@ -48,7 +48,7 @@ class AgentDetailView extends StatelessWidget {
                   ),
                   Text(
                     agent?.description ?? "",
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.white70),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   SizedBox(
                     height: context.mediumValue,

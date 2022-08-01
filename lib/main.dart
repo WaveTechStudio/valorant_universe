@@ -1,16 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'product/theme/product_theme.dart';
 
 import 'core/constant/locale_constants.dart';
 import 'core/constant/path_constants.dart';
 import 'core/constant/string_constants.dart';
-import 'core/init/localization_init.dart';
-import 'core/service/route/route_service.dart';
+import 'core/init/app_init.dart';
+import 'core/service/route/route_manager.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await localizationInit();
+  await AppInit().localizationInit();
+  await AppInit().setupSystem();
 
   runApp(
     EasyLocalization(
@@ -29,13 +31,7 @@ class ValorantUniverse extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        appBarTheme: const AppBarTheme(
-          elevation: 0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-        ),
-      ),
+      theme: ProductTheme().theme,
       // app name
       title: StringConstants.appName,
 
@@ -45,9 +41,9 @@ class ValorantUniverse extends StatelessWidget {
       locale: context.locale,
 
       // routing
-      routeInformationParser: RouteService.instance.globalRoutes.routeInformationParser,
-      routerDelegate: RouteService.instance.globalRoutes.routerDelegate,
-      routeInformationProvider: RouteService.instance.globalRoutes.routeInformationProvider,
+      routeInformationParser: RouteManager.instance.globalRoutes.routeInformationParser,
+      routerDelegate: RouteManager.instance.globalRoutes.routerDelegate,
+      routeInformationProvider: RouteManager.instance.globalRoutes.routeInformationProvider,
     );
   }
 }

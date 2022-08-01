@@ -10,10 +10,10 @@ import '../../../features/weapons/model/weapons_response_model.dart';
 import '../../../features/weapons/view/weapons_view.dart';
 import '../../constant/route_constants.dart';
 
-class RouteService {
-  static final RouteService _instace = RouteService._init();
-  static RouteService get instance => _instace;
-  RouteService._init();
+class RouteManager {
+  static final RouteManager _instace = RouteManager._init();
+  static RouteManager get instance => _instace;
+  RouteManager._init();
 
   final globalRoutes = GoRouter(
     initialLocation: RouteConstants.navbar,

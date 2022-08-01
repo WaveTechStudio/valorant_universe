@@ -20,7 +20,6 @@ class _NavbarViewState extends State<NavbarView> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.red,
         items: [
           BottomNavigationBarItem(
             icon: const Icon(CustomIcons.agent),

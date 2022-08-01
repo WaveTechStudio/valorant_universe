@@ -6,7 +6,7 @@ import '../../../core/constant/route_constants.dart';
 import '../../../core/constant/view_constants.dart';
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/context_extension.dart';
-import '../../../core/service/route/route_service.dart';
+import '../../../core/service/route/route_manager.dart';
 import '../../../product/lang/codegen_loader.g.dart';
 import '../../../product/widgets/cached_network_image.dart';
 import '../view_model/agents_view_model.dart';
@@ -115,7 +115,7 @@ class _AgentsViewState extends State<AgentsView> {
             crossAxisCount: 2),
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () => RouteService.instance
+            onTap: () => RouteManager.instance
                 .push(context: context, route: RouteConstants.agentDetail, extra: _viewModel.model[index]),
             child: ClipRRect(
               borderRadius: ViewConstants.borderCircular,

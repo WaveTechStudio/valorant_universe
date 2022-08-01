@@ -5,6 +5,7 @@ import '../../core/constant/view_constants.dart';
 import '../../core/extension/context_extension.dart';
 import '../../product/lang/codegen_loader.g.dart';
 import '../../product/widgets/cached_network_image.dart';
+import '../../product/widgets/weapon_info.dart';
 import '../weapons/model/weapons_response_model.dart';
 
 class WeaponDetailView extends StatelessWidget {
@@ -74,46 +75,21 @@ class WeaponDetailView extends StatelessWidget {
         SizedBox(
           height: context.mediumValue,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              LocaleKeys.weapon_details_magazine_size.tr(),
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            Text(
-              weapon?.weaponStats?.magazineSize.toString() ?? "",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ],
+        WeaponInfo(
+          left: LocaleKeys.weapon_details_magazine_size.tr(),
+          right: weapon?.weaponStats?.magazineSize.toString() ?? "",
         ),
         const Divider(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              LocaleKeys.weapon_details_reload_time.tr(),
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            Text(
+        WeaponInfo(
+          left: LocaleKeys.weapon_details_reload_time.tr(),
+          right:
               "${weapon?.weaponStats?.reloadTimeSeconds?.toStringAsFixed(2) ?? "0"} ${LocaleKeys.weapon_details_seconds.tr()}",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ],
         ),
         const Divider(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              LocaleKeys.weapon_details_fire_rate.tr(),
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            Text(
+        WeaponInfo(
+          left: LocaleKeys.weapon_details_fire_rate.tr(),
+          right:
               "${weapon?.weaponStats?.fireRate?.toStringAsFixed(2) ?? "0"} / ${LocaleKeys.weapon_details_seconds.tr()}",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ],
         ),
         const Divider(),
         SizedBox(
@@ -142,56 +118,33 @@ class WeaponDetailView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "${weapon?.weaponStats?.damageRanges?[index].rangeStartMeters?.toStringAsFixed(0) ?? ""} - ${weapon?.weaponStats?.damageRanges?[index].rangeEndMeters?.toStringAsFixed(0) ?? ""} ${LocaleKeys.weapon_details_meter.tr()}",
-                style: Theme.of(context).textTheme.titleMedium,
+              WeaponInfo(
+                left:
+                    "${weapon?.weaponStats?.damageRanges?[index].rangeStartMeters?.toStringAsFixed(0) ?? ""} - ${weapon?.weaponStats?.damageRanges?[index].rangeEndMeters?.toStringAsFixed(0) ?? ""} ${LocaleKeys.weapon_details_meter.tr()}",
+                right: "",
               ),
               const Divider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    LocaleKeys.weapon_details_head_damage.tr(),
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  Text(
-                    weapon?.weaponStats?.damageRanges?[index].headDamage?.toStringAsFixed(1) ?? "0",
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ],
+              WeaponInfo(
+                left: LocaleKeys.weapon_details_head_damage.tr(),
+                right: weapon?.weaponStats?.damageRanges?[index].headDamage?.toStringAsFixed(1) ?? "0",
               ),
               const Divider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    LocaleKeys.weapon_details_body_damage.tr(),
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  Text(
-                    weapon?.weaponStats?.damageRanges?[index].bodyDamage?.toStringAsFixed(1) ?? "0",
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ],
+              WeaponInfo(
+                left: LocaleKeys.weapon_details_body_damage.tr(),
+                right: weapon?.weaponStats?.damageRanges?[index].bodyDamage?.toStringAsFixed(1) ?? "0",
               ),
               const Divider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(LocaleKeys.weapon_details_leg_damage.tr()),
-                  Text(
-                    weapon?.weaponStats?.damageRanges?[index].bodyDamage?.toStringAsFixed(1) ?? "0",
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ],
+              WeaponInfo(
+                left: LocaleKeys.weapon_details_leg_damage.tr(),
+                right: weapon?.weaponStats?.damageRanges?[index].legDamage?.toStringAsFixed(1) ?? "0",
               ),
               const Divider(),
             ],
           );
         }),
-        separatorBuilder: (context, index) => SizedBox(
-              height: context.mediumValue,
-            ),
+        separatorBuilder: (context, index) {
+          return SizedBox(height: context.mediumValue);
+        },
         itemCount: weapon?.weaponStats?.damageRanges?.length ?? 0);
   }
 }
