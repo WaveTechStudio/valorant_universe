@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class  LocaleKeys {
+abstract class LocaleKeys {
   static const common_agents = 'common.agents';
   static const common_weapons = 'common.weapons';
   static const common = 'common';
@@ -20,5 +20,4 @@ abstract class  LocaleKeys {
   static const weapon_details_seconds = 'weapon_details.seconds';
   static const weapon_details = 'weapon_details';
   static const error = 'error';
-
 }
