@@ -142,12 +142,12 @@ class AgentDetailView extends StatelessWidget {
           );
         }));
   }
-}
 
-List<Color> getLinearGradientColors(AgentsResponseModel? agent) {
-  List<Color> colorList = [];
-  agent?.backgroundGradientColors?.forEach((element) {
-    colorList.add(element.toColor());
-  });
-  return colorList;
+  List<Color> getLinearGradientColors(AgentsResponseModel? agent) {
+    List<Color> colorList = [];
+    agent?.backgroundGradientColors?.forEach((element) {
+      colorList.add(element.toColor());
+    });
+    return colorList;
+  }
 }
