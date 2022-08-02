@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/context_extension.dart';
@@ -32,7 +33,8 @@ class _AgentsViewState extends State<AgentsView> {
     super.didChangeDependencies();
     _viewModel
         .fetchAllAgents(context.locale.toStringWithSeparator(separator: "-"))
-        .then((value) => _viewModel.getRoles());
+        .then((value) => _viewModel.getRoles())
+        .then((value) => FlutterNativeSplash.remove());
   }
 
   @override
