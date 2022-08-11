@@ -35,8 +35,8 @@ This app is developed with [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93vi
 - Network
   - [dio](https://pub.dev/packages/dio)
   - [PrettyDioLogger](https://pub.dev/packages/pretty_dio_logger)
-- Navigation
-  - [GoRouter](https://pub.dev/packages/go_router)
+- Routing
+  - [AutoRoute](https://pub.dev/packages/auto_route)
 - Localization
   - [EasyLocalization](https://pub.dev/packages/easy_localization)
 - Google
@@ -45,6 +45,7 @@ This app is developed with [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93vi
 - Code Generation
   - [MobX Codegen](https://pub.dev/packages/mobx_codegen)
   - [Build Runner](https://pub.dev/packages/build_runner)
+  - [Auto Route Generator](https://pub.dev/packages/auto_route_generator)
 
 ## Project Structure
 
@@ -62,9 +63,10 @@ This app is developed with [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93vi
 │   ├── core
 │   │   ├── enum
 │   │   ├── extension
-│   │   └── service
+│   │   └── manager
+│   │       ├── language
 │   │       ├── network
-│   │       └── navigation
+│   │       └── route
 │   ├── features
 │   │   ├── agent_detail
 │   │   ├── agents
@@ -75,8 +77,6 @@ This app is developed with [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93vi
 │   │   ├── constants
 │   │   ├── icons
 │   │   ├── init
-│   │   ├── lang
-│   │   ├── router
 │   │   ├── theme
 │   │   └── widget
 │   └── main.dart
@@ -88,31 +88,8 @@ This app is developed with [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93vi
 
 ## License
 
-<pre>
+Licensed under the MIT license, click [here](license.md) for details.
 
-MIT License
-
-Copyright (c) 2022 Cem Avcı
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-</pre>
 
 
 
