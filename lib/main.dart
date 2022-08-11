@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-import 'core/service/navigation/navigation_manager.dart';
+import 'core/service/navigation/app_router.gr.dart';
 import 'product/constants/locale_constants.dart';
 import 'product/constants/string_constants.dart';
 import 'product/init/product_init.dart';
@@ -20,13 +20,15 @@ Future<void> main() async {
       supportedLocales: const [LocaleConstants.en, LocaleConstants.tr],
       path: LocaleConstants.translationsPath,
       fallbackLocale: LocaleConstants.en,
-      child: const ValorantUniverse(),
+      child: ValorantUniverse(),
     ),
   );
 }
 
 class ValorantUniverse extends StatelessWidget {
-  const ValorantUniverse({Key? key}) : super(key: key);
+  ValorantUniverse({Key? key}) : super(key: key);
+
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +44,8 @@ class ValorantUniverse extends StatelessWidget {
       locale: context.locale,
 
       // routing
-      routeInformationParser: NavigationManager.instance.globalRoutes.routeInformationParser,
-      routerDelegate: NavigationManager.instance.globalRoutes.routerDelegate,
-      routeInformationProvider: NavigationManager.instance.globalRoutes.routeInformationProvider,
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }

@@ -1,12 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import '../../../core/service/navigation/app_router.gr.dart';
 import '../../../product/widgets/custom_error_widget.dart';
 
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/context_extension.dart';
-import '../../../core/service/navigation/navigation_manager.dart';
-import '../../../product/constants/route_constants.dart';
+
 import '../../../product/constants/view_constants.dart';
 import '../../../product/lang/locale_keys.g.dart';
 import '../../../product/widgets/cached_network_image.dart';
@@ -77,8 +78,7 @@ class _WeaponsViewState extends State<WeaponsView> {
           return ClipRRect(
               borderRadius: ViewConstants.borderCircular,
               child: GestureDetector(
-                onTap: () => NavigationManager.instance
-                    .push(context: context, route: RouteConstants.weaponDetail, extra: _viewModel.model[index]),
+                onTap: () => context.router.push(WeaponDetailRoute(weapon: _viewModel.model[index])),
                 child: _weaponsStackedCard(index, context),
               ));
         });
