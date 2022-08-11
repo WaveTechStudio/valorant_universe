@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-import 'core/service/navigation/app_router.gr.dart';
-import 'product/constants/locale_constants.dart';
+import 'core/manager/language/language_manager.dart';
+import 'core/manager/route/app_router.gr.dart';
 import 'product/constants/string_constants.dart';
 import 'product/init/product_init.dart';
 import 'product/theme/product_theme.dart';
@@ -17,9 +17,9 @@ Future<void> main() async {
 
   runApp(
     EasyLocalization(
-      supportedLocales: const [LocaleConstants.en, LocaleConstants.tr],
-      path: LocaleConstants.translationsPath,
-      fallbackLocale: LocaleConstants.en,
+      supportedLocales: LanguageManager.instance.supportedLocales,
+      path: LanguageManager.instance.path,
+      fallbackLocale: LanguageManager.instance.en,
       child: ValorantUniverse(),
     ),
   );

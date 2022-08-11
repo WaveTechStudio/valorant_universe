@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../lang/locale_keys.g.dart';
+import '../../core/manager/language/locale_keys.g.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   const CustomErrorWidget({Key? key}) : super(key: key);

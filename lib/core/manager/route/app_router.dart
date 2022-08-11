@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+
 import '../../../features/agent_detail/view/agent_detail_view.dart';
 import '../../../features/agents/view/agents_view.dart';
 import '../../../features/navbar/navbar_view.dart';

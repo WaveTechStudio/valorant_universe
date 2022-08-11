@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/extension/context_extension.dart';
+import '../../core/manager/language/locale_keys.g.dart';
 import '../../product/constants/view_constants.dart';
-import '../../product/lang/locale_keys.g.dart';
 import '../../product/widgets/cached_network_image.dart';
 import '../../product/widgets/weapon_info.dart';
 import '../weapons/model/weapons_response_model.dart';

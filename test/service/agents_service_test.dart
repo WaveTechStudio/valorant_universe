@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:valorant_universe/core/service/network/network_manager.dart';
+import 'package:valorant_universe/core/manager/network/network_manager.dart';
+
 import 'package:valorant_universe/features/agents/service/agents_service.dart';
 
 void main() {

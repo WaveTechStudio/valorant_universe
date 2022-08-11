@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../../core/extension/context_extension.dart';
 import '../../../core/extension/string_extension.dart';
+import '../../../core/manager/language/locale_keys.g.dart';
 import '../../../product/constants/view_constants.dart';
-import '../../../product/lang/locale_keys.g.dart';
 import '../../../product/widgets/cached_network_image.dart';
 import '../../agents/model/agents_response_model.dart';
 

@@ -4,8 +4,8 @@ import 'package:mobx/mobx.dart';
 
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/string_extension.dart';
-import '../../../core/service/network/network_manager.dart';
-import '../../../product/lang/locale_keys.g.dart';
+import '../../../core/manager/language/locale_keys.g.dart';
+import '../../../core/manager/network/network_manager.dart';
 import '../model/agents_response_model.dart';
 import '../service/agents_service.dart';
 

@@ -3,14 +3,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import '../../../core/service/navigation/app_router.gr.dart';
-import '../../../product/widgets/custom_error_widget.dart';
 
 import '../../../core/enum/page_states.dart';
 import '../../../core/extension/context_extension.dart';
+import '../../../core/manager/language/locale_keys.g.dart';
+import '../../../core/manager/route/app_router.gr.dart';
 import '../../../product/constants/view_constants.dart';
-import '../../../product/lang/locale_keys.g.dart';
 import '../../../product/widgets/cached_network_image.dart';
+import '../../../product/widgets/custom_error_widget.dart';
 import '../view_model/agents_view_model.dart';
 
 class AgentsView extends StatefulWidget {
