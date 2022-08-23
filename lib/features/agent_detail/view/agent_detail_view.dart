@@ -90,7 +90,7 @@ class AgentDetailView extends StatelessWidget {
       child: SizedBox(
         height: context.dynamicHeight(0.3),
         child: CustomCachedNetworkImage(
-          imageUrl: agent?.bustPortrait,
+          imageUrl: agent?.fullPortrait,
         ),
       ),
     );

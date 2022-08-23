@@ -149,7 +149,7 @@ class _AgentsViewState extends State<AgentsView> {
       children: [
         Expanded(
           flex: 4,
-          child: CustomCachedNetworkImage(imageUrl: _viewModel.model[index]?.fullPortraitV2),
+          child: CustomCachedNetworkImage(imageUrl: _viewModel.model[index]?.fullPortrait),
         ),
         Expanded(
           child: Center(

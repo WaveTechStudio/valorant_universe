@@ -14,7 +14,7 @@ class CustomCachedNetworkImage extends StatelessWidget {
     return CachedNetworkImage(
       placeholder: (context, url) => const SizedBox.shrink(),
       imageUrl: imageUrl ?? "",
-      errorWidget: (context, url, error) => const Icon(Icons.error),
+      errorWidget: (context, url, error) => const Center(child: Icon(Icons.error)),
     );
   }
 }
